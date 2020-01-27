@@ -1,0 +1,30 @@
+possibles[0][1..36] = 1..36;
+pos =0;
+if(gen())
+{
+  print(sol);
+}
+Else
+{
+  print(no_sol);
+}
+bool gen()
+{
+  found = false;
+  int counter = 0;
+  if(pos > 8)
+  {
+    return true;
+  }
+  else
+  {
+    possibles[pos][counter++] = ... ;
+    ...
+    while(!found && --counter >= 0)
+    {
+      sol[pos] = possibles[pos][counter];
+      possibles[++pos][counter] = -1;
+      found = gen;
+    }
+    if(!found) sol[pos--] = -1;
+}
