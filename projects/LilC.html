@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>LilC | HvanB</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="LilC" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Team No Name 3 (Matthew Binning, John Moon, Weimeng Pu, and Todor Nikolov) set out to create a compiler (and language) for our CS153 compiler design class. Here is the report." />
+<meta property="og:description" content="Team No Name 3 (Matthew Binning, John Moon, Weimeng Pu, and Todor Nikolov) set out to create a compiler (and language) for our CS153 compiler design class. Here is the report." />
+<link rel="canonical" href="http://localhost:4000/projects/LilC" />
+<meta property="og:url" content="http://localhost:4000/projects/LilC" />
+<meta property="og:site_name" content="HvanB" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-12-15T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"Team No Name 3 (Matthew Binning, John Moon, Weimeng Pu, and Todor Nikolov) set out to create a compiler (and language) for our CS153 compiler design class. Here is the report.","@type":"BlogPosting","url":"http://localhost:4000/projects/LilC","headline":"LilC","dateModified":"2017-12-15T00:00:00-07:00","datePublished":"2017-12-15T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/LilC"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="HvanB" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">HvanB</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        <!--
+            my_page.autogen is populated by the pagination logic for all pages
+                            that are automatically created by the gem. Check for non-existence to exclude pagination pages from site.pages iterators
+          -->
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/artwork/index.html">Artwork</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/index.html">Blog</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1>LilC</h1>
+
+<em>2017 Dec 15</em><br/>
+
+<br/>
+
+
+<p>Team No Name 3 (Matthew Binning, John Moon, Weimeng Pu, and Todor Nikolov) set out to create a compiler (and language) for our CS153 compiler design class. Here is the report.</p>
+
+<h2 id="high-level-description-of-the-compilers-design">High-level Description of the Compiler’s Design</h2>
+<p>For our CS153 class, we decided to design a compiler for the language “LilC” (or little C). LilC was originally intended to be a subset of the C language (c.f. TinyC, smallC, etc); however, it quickly evolved into its own language, both syntactically, and semantically. LilC was implemented in the same manner as the rest of the class’s projects. That is, we used the tooling of ANother Tool for Language Recognition (henceforth referred to as ANTLR) to generate a parser and lexer. Unlike the other teams, however, we designed our compiler in C++ (nonnative to ANTLR) which caused us much strife. Despite this, we were able to reach all requirements (in particular, we handle error-checking by inserting ? marks into the assembly file and printing debugging messages).</p>
+
+<p>We used a source file with the same name as the language as an entry point for the compiler, which itself used two source files to override the default behavior of the “visitor”. (This visitor was generated by ANTLR in order to walk through the parse tree, also generated by ANTLR’s parser). The first pass found and associated types and definitions into a symbol table, which was fed into the second pass of the parse tree. (This symbol table structure was provided by our instructor, Dr. Mak, from previous assignments).</p>
+
+<p>In the first pass, our team also took the initiative to pass a vector (list structure) which allowed us to “hoist” initializations of global variables into the second pass of the parse tree. This was necessary, because initializations could not be made until after writing the assembly to visit the main statement (which occurred in pass2). This allowed LilC to have global initializations, unlike in Pascal’s implementation. In pass2, we also took the initiative to use a map structure which would associate certain identifiers (those entered into the symbol table as variables, rather than fields) with slots (or register numbers). We chose to use the term “field” in the context of our own compiler as global variables (ironically, this is the same terminology as the Jasmin assembler). This map had to carefully reset its slot numbers as it entered and exited functions (similar to the stackframes of fully compiled languages).</p>
+
+<p>The compiler, following LilC’s grammar, was ultimately able to generate code from a source file (which we affably gave the extension .lilc). This was outputted as a Jasmin assembly file (.j). These files could then be assembled by Jasmin to create Java executable files (.class). Notably, the compiler gives type-check warnings for variables when they are assigned to the result of a function, but this has not caused a problem in compilation, assembly, and execution. We also included Dr. Mak’s precompiled PascalRTL library in order to time the execution of our program. As a side note, we subsequently discovered that John’s computer was faster than Matt’s, but that is neither here nor there.</p>
+
+<p>The code generation is where we had the most license to be creative. In C tradition, we kept assignments as expressions rather than statements, so that LilC might be able to chain assignments. Support for this exists in the grammar of the language; however, it is not actually implemented. This is because doing so would necessitate leaving an operand on the top of the JVM’s operand stack at the end of every assignment statement. However, many, if not most, assignments are top-level statements, and are not expected to leave anything on the operand stack. Thus, doing so could quickly “blow out the stack”. Matt believes C’s sequence points are used to wipe excess operands from carrying over between assignments, but this is beyond the scope of our project.</p>
+
+<p>We also differentiated between procedures and functions (both being considered subroutines) in two ways. Firstly, functions are able to return a value, whereas procedures only return void. Secondly, procedures were intended to pass-by-reference, while functions were to pass-by-value. This was not implemented (both of them pass-by-value) due to time constraints and we realized only one or the other was necessary to meet requirements. Speaking of types, the language, despite being both statically and strongly typed, has nearly no references to type in the source code (the exception being subroutine arguments).</p>
+
+<p>Additionally, the language inherits its output (or print) operator from C++ style. Its input is similarly styled, but not implemented (nor required). However, due to time restrictions, the print statement was handled one character at a time, and because LilC only has integers and floating point types implemented, this meant many conversions to ASCII were necessary. Much unlike C, LilC also has operators for exponentiation, ** (as in Python), and // for logarithms analogously. These were implemented with calls to Java’s precompiled libraries, largely because Todor needs more syntactic sugar in his life. The rest of the language and its implementation (the compiler) were relatively unnotable, compared to C.</p>
+
+<h2 id="uml-diagrams-of-major-classes">UML Diagrams of Major Classes</h2>
+<p><img src="/assets/LilC/1.jpg" alt="UML Diagram" />
+<img src="/assets/LilC/2.jpg" alt="UML Diagram 2" /></p>
+
+<p>Grammar for the Source Language (BNF)
+<img src="/assets/LilC/3.jpg" alt="UML Diagram 3" />
+<img src="/assets/LilC/4.jpg" alt="UML Diagram 4" />
+<img src="/assets/LilC/5.jpg" alt="UML Diagram 5" />
+<img src="/assets/LilC/6.jpg" alt="UML Diagram 6" /></p>
+
+<h2 id="code-templates-jasmin">Code Templates (Jasmin)</h2>
+<h3 id="function--parameters">Function + Parameters</h3>
+<p>Example from mersenne2.j</p>
+
+<figure class="highlight"><pre><code class="language-jasmin" data-lang="jasmin">.method static fnDigitToChar(F)F
+
+;{fpNum=fpNum+48.0;}
+
+;fpNum=fpNum+48.0
+
+;fpNum+48.0
+    	fload 0
+    	ldc 	48.0
+    	fadd
+    	fstore 0
+    	fload 0
+    	freturn
+
+.limit stack 4
+.limit locals 1
+.end method</code></pre></figure>
+
+<h3 id="if-statement--printing">If Statement + Printing</h3>
+<p>Example from mersenne2.j</p>
+
+<figure class="highlight"><pre><code class="language-jasmin" data-lang="jasmin">;if(arg==count){&lt;&lt;121;&lt;&lt;101;&lt;&lt;115;}else{&lt;&lt;110;&lt;&lt;111;}
+
+; arg==count
+
+    	getstatic   	prog/arg F
+    	getstatic   	prog/count F
+     	fcmpl
+    	ifne R2
+    	ldc 	1
+    	goto R3
+    	R2:
+    	ldc 	0
+    	R3:
+    	ifeq I0
+
+;{&lt;&lt;121;&lt;&lt;101;&lt;&lt;115;}
+
+;&lt;&lt;121;
+    	getstatic java/lang/System/out Ljava/io/PrintStream;
+    	ldc 	121
+    	int2char
+    	invokevirtual java/io/PrintStream.print(C)V
+
+;&lt;&lt;101;
+    	getstatic java/lang/System/out Ljava/io/PrintStream;
+    	ldc 	101
+    	int2char
+    	invokevirtual java/io/PrintStream.print(C)V
+
+;&lt;&lt;115;
+    	getstatic java/lang/System/out Ljava/io/PrintStream;
+    	ldc 	115
+    	int2char
+    	invokevirtual java/io/PrintStream.print(C)V
+    	goto I1
+    	I0:
+
+;{&lt;&lt;110;&lt;&lt;111;}
+
+;&lt;&lt;110;
+    	getstatic java/lang/System/out Ljava/io/PrintStream;
+    	ldc 	110
+    	int2char
+    	invokevirtual java/io/PrintStream.print(C)V
+
+;&lt;&lt;111;
+    	getstatic java/lang/System/out Ljava/io/PrintStream;
+    	ldc 	111
+    	int2char
+    	invokevirtual java/io/PrintStream.print(C)V
+    	I1:
+
+ (integerMode? "if_icmpgt R" : (realMode? "ifgt R" : "if??gt R"))
+ (integerMode? "if_icmplt R" : (realMode? "iflt R" : "if??lt R"))
+ (integerMode? "if_icmpge R" : (realMode? "ifge R" : "if??ge R"))
+ (integerMode? "if_icmpne R" : (realMode? "ifne R" : "if??ne R"))
+ (integerMode? "if_icmple R" : (realMode? "ifle R" : "if??le R"))
+ (integerMode? "if_icmp?? R" : (realMode? "if?? R" : "if???? R"))</code></pre></figure>
+
+<p>Essentially, if the instruction uses an integer type, we use the if_icmp. Otherwise, we use the standard ifcmp operators.</p>
+<h3 id="while-statement--arithmetic">While Statement + Arithmetic</h3>
+<p>Example while statement pulled from catalan2.j</p>
+
+<figure class="highlight"><pre><code class="language-jasmin" data-lang="jasmin">;while(itrBase&gt;1){itrBase=itrBase-1;iBase=iBase*itrBase;}
+    	W0:
+
+; itrBase&gt;1
+
+    	iload 1
+    	ldc 	1
+    	if_icmple R0
+    	ldc 	1
+    	goto R1
+    	R0:
+    	ldc 	0
+    	R1:
+    	ifeq W1
+
+;{itrBase=itrBase-1;iBase=iBase*itrBase;}
+
+;itrBase=itrBase-1
+
+;itrBase-1
+    	iload 1
+    	ldc 	1
+    	isub
+    	istore 1
+
+;iBase=iBase*itrBase
+
+;iBase*itrBase
+    	iload 0
+    	iload 1
+    	imul
+    	istore 0
+    	goto W0
+    	W1:
+
+
+"\n;" &lt;&lt; ctx-&gt;getText() &lt;&lt; endl; // comment                  	 
+"\tW" &lt;&lt; to_string(w_label++) &lt;&lt; ":" &lt;&lt; endl; // while       	 
+visit(ctx-&gt;paren()); // eval conditional                               	 
+“\tifeq W" + to_string(w_label) &lt;&lt; endl; // if not 0, goto done   
+visit(ctx-&gt;statement()); // eval statement                             	 
+“\tgoto W" + to_string(w_label - 1) &lt;&lt; endl; // goto while   	 
+“"\tW" &lt;&lt; to_string(w_label++) &lt;&lt; ":" &lt;&lt; endl; // done </code></pre></figure>
+
+<h3 id="procedure-call">Procedure Call</h3>
+
+<figure class="highlight"><pre><code class="language-jasmin" data-lang="jasmin">;{callprompt:arg;while(count&lt;=arg)count=count*2.0;count=count-1.0;if(arg==count){&lt;&lt;121;&lt;&lt;101;&lt;&lt;115;}else{&lt;&lt;110;&lt;&lt;111;}}
+
+;callprompt:arg;
+    	getstatic   	prog/arg F
+    	invokestatic prog/prompt(F)V</code></pre></figure>
+
+
+
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">HvanB</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">HvanB</li><li><a class="u-email" href="mailto:hvanb@protonmail.com">hvanb@protonmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/DoughKnight"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">DoughKnight</span></a></li><li><a href="https://www.linkedin.com/in/T.B.A."><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">T.B.A.</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software Development in the Silicon Slopes</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
