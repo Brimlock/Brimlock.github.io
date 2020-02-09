@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>One Tough Program | HvanB</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="One Tough Program" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="One Tough Puzzle is the name of a classic jigsaw puzzle that I received five to ten years ago. I had heard of a similar puzzle without a pattern, and reckoning the difficulty, I had never actually bothered. But we live in the information age, and deciding to brush up on my C skills, I wrote a program to solve it. This could be genericized to solve any jigsaw puzzle (if the puzzles joints are enumerable)." />
+<meta property="og:description" content="One Tough Puzzle is the name of a classic jigsaw puzzle that I received five to ten years ago. I had heard of a similar puzzle without a pattern, and reckoning the difficulty, I had never actually bothered. But we live in the information age, and deciding to brush up on my C skills, I wrote a program to solve it. This could be genericized to solve any jigsaw puzzle (if the puzzles joints are enumerable)." />
+<link rel="canonical" href="http://localhost:4000/2019/12/One-Tough-Program.html" />
+<meta property="og:url" content="http://localhost:4000/2019/12/One-Tough-Program.html" />
+<meta property="og:site_name" content="HvanB" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-08T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"One Tough Puzzle is the name of a classic jigsaw puzzle that I received five to ten years ago. I had heard of a similar puzzle without a pattern, and reckoning the difficulty, I had never actually bothered. But we live in the information age, and deciding to brush up on my C skills, I wrote a program to solve it. This could be genericized to solve any jigsaw puzzle (if the puzzles joints are enumerable).","@type":"BlogPosting","url":"http://localhost:4000/2019/12/One-Tough-Program.html","headline":"One Tough Program","dateModified":"2019-12-08T00:00:00-07:00","datePublished":"2019-12-08T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/12/One-Tough-Program.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="HvanB" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">HvanB</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        <!--
+            my_page.autogen is populated by the pagination logic for all pages
+                            that are automatically created by the gem. Check for non-existence to exclude pagination pages from site.pages iterators
+          -->
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/artwork/index.html">Artwork</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/index.html">Blog</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/projects/index.html">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">One Tough Program</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-12-08T00:00:00-07:00" itemprop="datePublished">Dec 8, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1>One Tough Program</h1>
+
+<em>2019 Dec 08</em><br/>
+
+<br/>
+
+
+<p>One Tough Puzzle is the name of a classic jigsaw puzzle that I received five to ten years ago. I had heard of a similar puzzle without a pattern, and reckoning the difficulty, I had never actually bothered. But we live in the information age, and deciding to brush up on my C skills, I wrote a program to solve it. This could be genericized to solve any jigsaw puzzle (if the puzzles joints are enumerable).</p>
+
+<h2 id="the-puzzle">The Puzzle</h2>
+<p>The puzzle only includes nine pieces; however they are all blank. This would be 9! permutations (possible solutions) to number 362,880. This is as advertised, over 300,000. That does not account for all rotations of the pieces as theyare placed. On top of that, every configuration is isometric to three others (because the solution itself could be rotated. This ultimately calculates to 9!*4**9/4 or 9!*4**8  total possible solutions (23,781,703,680). This should hypothetically… not be worth solving.</p>
+
+<p><img src="/assets/one_tough_program/puzzle.jpg" alt="Unsolved Puzzle" /></p>
+
+<h2 id="the-program">The Program</h2>
+<p>I began drafting out some simple definitions to begin solving the puzzle. These were <em>typedef</em> ed and the slot for clubs was chosen to be 0 (instead of -4) so that the enumeration would fit into three bits.</p>
+
+<p><img src="/assets/one_tough_program/definitions.png" alt="Definitions" /></p>
+
+<p>The next phase was to right out the general rules to the program. This was mostly restricted to the data structures and their representation of the puzzle within the program.</p>
+
+<p><img src="/assets/one_tough_program/rules.png" alt="Rules" /></p>
+
+<p>Finally, in the third stage, I defined the algorithm. This scrap of paper hardly can account for a design doc, but it served. Maybe for the next projects, I will have to step up my game… :D Anyway, after these were defined, I ended up taking a long hiatus from the program. Between the time, I even ended up working on the <a href="/projects/GCA.html">Genetic Cellular Automaton</a> in some between time. Then, many months later, vacation hit and I returned to the grind.</p>
+
+<p><img src="/assets/one_tough_program/algorithm.png" alt="Algorithm" /></p>
+
+<h3 id="the-return">The Return</h3>
+<p>During a Thanksgiving movie with family, I drafted a more in-depth pseudocode to the program. I know… I’m a family man. It actually worked out though! I got to watch <em>A White Christmas</em>, relaxing, and doing what I love – coding – at the same time. Of course, my algorithing bled into the next movie. My attention to it bled as well, but the resounding disappointment by my family to the movie let me know… yep, didn’t miss much.</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">possibles</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">..</span><span class="mi">36</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">..</span><span class="mi">36</span><span class="p">;</span>
+<span class="n">pos</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">gen</span><span class="p">())</span>
+<span class="p">{</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">sol</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">Else</span>
+<span class="p">{</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">no_sol</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">bool</span> <span class="nf">gen</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">found</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">pos</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+    <span class="n">possibles</span><span class="p">[</span><span class="n">pos</span><span class="p">][</span><span class="n">counter</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="p">...</span> <span class="p">;</span>
+    <span class="p">...</span>
+    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">found</span> <span class="o">&amp;&amp;</span> <span class="o">--</span><span class="n">counter</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">sol</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">possibles</span><span class="p">[</span><span class="n">pos</span><span class="p">][</span><span class="n">counter</span><span class="p">];</span>
+      <span class="n">possibles</span><span class="p">[</span><span class="o">++</span><span class="n">pos</span><span class="p">][</span><span class="n">counter</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+      <span class="n">found</span> <span class="o">=</span> <span class="n">gen</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">found</span><span class="p">)</span> <span class="n">sol</span><span class="p">[</span><span class="n">pos</span><span class="o">--</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Unfortunately, when I began again on my C files, the road was bumpy. Or buggy. I squished many, but the program refused to work. It turned into a bit of an obsession… and during the tail end of the vacation, I probably paid less attention to the present than I should have… “Don’t you get tired of programming?” One of my family asked.
+Yep! She even solved the puzzle in about twenty minutes. That was a bit funny to me. I was impressed with her achievement, and they all attested it to the “human element.” I think, however, the puzzle <em>is</em> a bit simpler than at first glance. One can tell that some types of joints will need to be at the edges (the excess joints), effectively eliminating manifold permutations. I acted flabbergasted for fun (for somewhy), but really solving the puzzle had long not been the objective. To me, these side projects aren’t work – the project itself is the exciting challenge.</p>
+
+<p><img src="/assets/one_tough_program/solved.jpg" alt="Solved" /></p>
+
+<p>Two weeks later, on December 7th, I squished the last bug. I printed the solution. Thankfully, it worked.</p>
+
+<p><img src="/assets/one_tough_program/output.png" alt="Output" />.</p>
+
+<h2 id="source">Source</h2>
+<p>Now that some last minute touches and cleanup have been applied to the source code, it is available here.</p>
+
+<p><a href="https://github.com/DoughKnight/One-Tough-Program">https://github.com/DoughKnight/One_Tough_Program</a></p>
+
+
+
+
+  </div><a class="u-url" href="/2019/12/One-Tough-Program.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">HvanB</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">HvanB</li><li><a class="u-email" href="mailto:hvanb@protonmail.com">hvanb@protonmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/DoughKnight"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">DoughKnight</span></a></li><li><a href="https://www.linkedin.com/in/T.B.A."><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">T.B.A.</span></a></li><li><a href="https://youtube.com/T.B.A."><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">T.B.A.</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software Development in the Silicon Slopes</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

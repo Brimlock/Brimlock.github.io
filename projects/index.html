@@ -12,6 +12,7 @@
 <link rel="canonical" href="http://localhost:4000/projects/" />
 <meta property="og:url" content="http://localhost:4000/projects/" />
 <meta property="og:site_name" content="HvanB" />
+<link rel="next" href="http://localhost:4000/projects/2/" />
 <script type="application/ld+json">
 {"description":"Software Development in the Silicon Slopes","@type":"WebPage","url":"http://localhost:4000/projects/","headline":"Projects","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
@@ -45,10 +46,6 @@
           
         
           
-          <a class="page-link" href="/projects/">Projects</a>
-          
-        
-          
         
           
           <a class="page-link" href="/artwork/index.html">Artwork</a>
@@ -75,6 +72,14 @@
           
         
           
+          <a class="page-link" href="/projects/index.html">Projects</a>
+          
+        
+          
+        
+          
+        
+          
         
       </div>
     </nav>
@@ -84,115 +89,175 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <style>
+  ul.pager { 
+    text-align: center;
+    list-style: none;
+  }
+  ul.pager li {
+    display: inline;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    }
+  ul.pager li:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 150, 180, 0.5);
+  }
 
-  <header class="post-header">
-    <h1 class="post-title">Projects</h1>
-  </header>
+  img.thumb {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 150px; /* Set a small width */
+  }
 
-  <div class="post-content">
+  /* Add a hover effect (blue shadow) */
+  img.thumb:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 150, 180, 0.5);
+  }
+</style>
+
+<div class="home">
+
+  <h1 class="page-heading">Projects</h1>
+  
+  
+
+
+  <ul class="post-list">
     
-<h2 id="wip">WIP</h2>
-
-<p><a href="/projects/Beln">Beln</a>
-, <em>2020 Feb 05</em></p>
-
-<p><p>Beln is a collection of multimedia including text, images, stories, and music to represent the wandering thoughts of an epic, abstract, cyber-fantasy. Extensive world-building is used in the series.</p>
-
-</p>
-
-<p><a href="/projects/Genetic_Cellular_Automaton">Genetic Cellular Automaton</a>
-, <em>2020 Feb 05</em></p>
-
-<p><p>The Genetic Cellular Automaton is a cellular automaton which uses genetic algorithms to reach a perfect/controlled state from a default state that is in variance.</p>
-
-</p>
-
-<p><a href="/projects/Star%20Ghost">Star Ghost</a>
-, <em>2020 Feb 05</em></p>
-
-<p><p>Star Ghost is a simple 1 and 2 player game designed in Unity, inspired partly by StarFox. It is designed to re-use the avionics simulation of Electroshka, as well as having a “ground control” type player.</p>
+      <li>
+        <h2><a class="post-link" href="/2019/12/One-Tough-Program.html">One Tough Program</a></h2>
+       <span class="post-meta">
+       Dec 8, 2019 - 
+       
+       
+       
+       <em><a href="/categories#Done">Done</a></em>
+       
+       
+       
+       
+      
+      </span>
+      
+      
+      
+      <p><p>One Tough Puzzle is the name of a classic jigsaw puzzle that I received five to ten years ago. I had heard of a similar puzzle without a pattern, and reckoning the difficulty, I had never actually bothered. But we live in the information age, and deciding to brush up on my C skills, I wrote a program to solve it. This could be genericized to solve any jigsaw puzzle (if the puzzles joints are enumerable).</p>
 
 </p>
-
-<h2 id="planned">Planned</h2>
-
-<p><a href="/projects/Dial%20Duel">Dial Duel</a>
-, <em>2020 Feb 05</em></p>
-
-<p><p>Dial Duel is a game about rapid hacking. It is prototyped through a terminal and communication is done through a secure tunnel. Bittish is used as the language very naturally in order to issue commands/actions.</p>
-
-</p>
-
-<h2 id="done">Done</h2>
-
-<p><a href="/projects/Tetris-Clone">Tetris Clone</a>
-, <em>2010 Aug 11</em></p>
-
-<p><p>This was developed in 2010 as my last C++/Allegro project before I began to study Simple DirectMedia Layer.
-It is a simple Tetris clone which features a score and various blocks.</p>
-
-</p>
-
-<p><a href="/projects/Meteoroids">Meteoroids</a>
-, <em>2010 Aug 12</em></p>
-
-<p><p>This was my first game developed using C++ and Simple DirectMedia Layer back in 2010. It is largely based on Asteroids (but not quite the same).
-It is programmed for the <a href="https://en.wikipedia.org/wiki/GP2X_Wiz">GP2X-Wiz</a>.</p>
+      
+      </li>
+    
+      <li>
+        <h2><a class="post-link" href="/2017/12/LilC.html">LilC</a></h2>
+       <span class="post-meta">
+       Dec 15, 2017 - 
+       
+       
+       
+       <em><a href="/categories#Done">Done</a></em>
+       
+       
+       
+       
+      
+      </span>
+      
+      
+      
+      <p><p>Team No Name 3 (Matt B,, John M., Weimeng P., and Todor N.) set out to create a compiler (and language) for our CS153 compiler design class. Here is the report.</p>
 
 </p>
-
-<p><a href="/projects/Lost-Labyrinth">Lost Labyrinth</a>
-, <em>2015 Jan 15</em></p>
-
-<p><p>This is a game developed with the help of a small team under 48 hours for the <a href="https://globalgamejam.org">Global Game Jam</a> competition. It is a somewhat of a hybrid between a top-down (or isometric) game and a 2D side scrolling maze. The map keeps track of the player coordinates within the maze, and based on that information, the 2D side scrolling world is rendered.</p>
-
-</p>
-
-<p><a href="/projects/Roommate_Tools">Roommate Tools</a>
-, <em>2016 Apr 01</em></p>
-
-<p>The four of us, Matt B., Raymond G., William V., and Khoi D., set out to create a useful tool for university students. We ended up developing Roommate Tools, a practical application whose primary concern is to allow students to find potential roommates.</p>
-
-<p><a href="/projects/Arithmetic-Logic-Unit">Arithmetic Logic Unit</a>
-, <em>2016 Apr 25</em></p>
-
-<p><p>This project is a traditional <a href="https://en.wikipedia.org/wiki/Arithmetic_logic_unit">arithmetic logic unit</a> (that is, the hardware inside the computer which runs arithmetic and logical operations) modeled in <a href="https://en.wikibooks.org/wiki/MIPS_Assembly">MIPS assembly</a>. The assembly simulation software used is <a href="https://courses.missouristate.edu/KenVollmar/MARS/">MARS</a>.</p>
-
-</p>
-
-<p><a href="/projects/Faceline.stream">Faceline.stream</a>
-, <em>2017 Apr 01</em></p>
-
-<p><p>A real-time, mobile-accessible facial detection pipeline.</p>
+      
+      </li>
+    
+      <li>
+        <h2><a class="post-link" href="/2017/12/Travelers-Guide.html">Traveler&#39;s Guide</a></h2>
+       <span class="post-meta">
+       Dec 10, 2017 - 
+       
+       
+       
+       <em><a href="/categories#Done">Done</a></em>
+       
+       
+       
+       
+      
+      </span>
+      
+      
+      
+      <p><p>This project makes use of world country information from the CIA World Factbook. This was developed for our CS157a Databases class. Extensive parsing in Python was used to obtain the data initially, then SQL was used thereafter.</p>
 
 </p>
-
-<p><a href="/projects/One_Tough_Program">One Tough Program</a>
-, <em>2020 Feb 05</em></p>
-
-<p><p>One Tough Puzzle is the name of a classic jigsaw puzzle that I received five to ten years ago. I had heard of a similar puzzle without a pattern, and reckoning the difficulty, I had never actually bothered. But we live in the information age, and deciding to brush up on my C skills, I wrote a program to solve it. This could be genericized to solve any jigsaw puzzle (if the puzzles joints are enumerable).</p>
+      
+      </li>
+    
+      <li>
+        <h2><a class="post-link" href="/2017/06/Beln.html">Beln</a></h2>
+       <span class="post-meta">
+       Jun 1, 2017 - 
+       
+       
+       
+       <em><a href="/categories#WIP">WIP</a></em>
+       
+       
+       
+       
+      
+      </span>
+      
+      
+      
+      <p><p>Beln is a collection of multimedia including text, images, stories, and music to represent the wandering thoughts of an epic, abstract, cyber-fantasy. Extensive world-building is used in the series.</p>
 
 </p>
-
-<p><a href="/projects/Travelers-Guide">Traveler’s Guide</a>
-, <em>2017 Dec 10</em></p>
-
-<p><p>This project makes use of world country information from the CIA World Factbook. This was developed for our CS157a Databases class. Extensive parsing in Python was used to obtain the data initially, then SQL was used thereafter.</p>
+      
+      </li>
+    
+      <li>
+        <h2><a class="post-link" href="/2017/05/Genetic_Cellular_Automaton.html">Genetic Cellular Automaton</a></h2>
+       <span class="post-meta">
+       May 1, 2017 - 
+       
+       
+       
+       <em><a href="/categories#WIP">WIP</a></em>
+       
+       
+       
+       
+      
+      </span>
+      
+      
+      
+      <p><p>The Genetic Cellular Automaton is a cellular automaton which uses genetic algorithms to reach a perfect/controlled state from a default state that is in variance.</p>
 
 </p>
+      
+      </li>
+    
+  </ul>
+  
+  
+  <ul class="pager">
+      
+      
+      <li class="next">
+          <a href="/projects/2/">Older Posts &rarr;</a>
+      </li>
+      
+  </ul>
+  
 
-<p><a href="/projects/LilC">LilC</a>
-, <em>2017 Dec 15</em></p>
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
 
-<p><p>Team No Name 3 (Matthew Binning, John Moon, Weimeng Pu, and Todor Nikolov) set out to create a compiler (and language) for our CS153 compiler design class. Here is the report.</p>
-
-</p>
-
-
-  </div>
-
-</article>
+</div>
 
       </div>
     </main><footer class="site-footer h-card">

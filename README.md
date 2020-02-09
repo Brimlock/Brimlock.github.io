@@ -1,4 +1,7 @@
-# DoughKnight.github.io
-My current domain name is hvanb.us
+# Hvanb.us
+Experimenting with GitHub for effective web hosting. Please see the URL above.
 
-Thanks for visiting!
+To Do
+-----
+* Integrate Let's Encrypt
+* Add Wfd, alpha-fitness, and betsuin projects

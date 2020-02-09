@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Faceline.stream | HvanB</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Faceline.stream" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="A real-time, mobile-accessible facial detection pipeline." />
+<meta property="og:description" content="A real-time, mobile-accessible facial detection pipeline." />
+<link rel="canonical" href="http://localhost:4000/2017/04/Faceline.stream.html" />
+<meta property="og:url" content="http://localhost:4000/2017/04/Faceline.stream.html" />
+<meta property="og:site_name" content="HvanB" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-01T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"A real-time, mobile-accessible facial detection pipeline.","@type":"BlogPosting","url":"http://localhost:4000/2017/04/Faceline.stream.html","headline":"Faceline.stream","dateModified":"2017-04-01T00:00:00-06:00","datePublished":"2017-04-01T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/04/Faceline.stream.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="HvanB" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">HvanB</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        <!--
+            my_page.autogen is populated by the pagination logic for all pages
+                            that are automatically created by the gem. Check for non-existence to exclude pagination pages from site.pages iterators
+          -->
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/artwork/index.html">Artwork</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/index.html">Blog</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/projects/index.html">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Faceline.stream</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-04-01T00:00:00-06:00" itemprop="datePublished">Apr 1, 2017
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1>Faceline.stream</h1>
+
+<em>2017 Apr 01</em><br/>
+
+<br/>
+
+
+<p>A real-time, mobile-accessible facial detection pipeline.</p>
+
+<h2 id="contributions-to-the-project">Contributions to the Project</h2>
+<p>When we were first dividing up the workflow between our four team members, I wanted to make sure I chose a portion that would teach me a good deal. I was allotted the video processing portion of the pipeline, that is, using FFMPEG, OpenCV, Dlib, and such. I wrote the whole Python script (with the exception of the finalized DB calls and first couple of time stamps) which made use of all these dependencies. It required that I learn various different concepts, such as IPC, and even Python itself. I also programmed many flags and options within the script to extend its usability. Furthermore, I contributed by modifying Tristan Hume’s source-code in various areas to make it compatible with our own pipeline (via IPC). I did all the debugging for this part of the pipeline. I also explored IPC with Python to leverage real-time efficiency. This was a failure within the time constraints. Finally, I bought the domain name (redirected from P. L.’s previous domain name) so called Faceline.stream.</p>
+
+<p><img src="/assets/faceline.stream/team_kmap.png" alt="Team KMAP Photo" /></p>
+<h2 id="teammates-contributions">Teammates’ contributions</h2>
+<p>My teammates handled the various other parts around the core pipeline that I developed. Two of our members were dedicated to the web portion of the program, and their work was the most arcane to me. P. L. worked on the frontend of the website, which quickly looked very appealing. From what I could tell after that, he worked with L. T. to integrate the website with L. T.’s servers. P. L. also finalized the Postgres database, and he was also available to help with any questions that I had via Slack. L. T. worked to set up the servers and backend that ran our pipeline. He also worked to parallelize the pipeline, ultimately running three servers. He worked with P. L. to integrate the frontend with the backend, and was likewise available to help me with questions I had, about the database, networking, or otherwise. L. T. also brought a lot of moral support (he’s a pretty funny guy).</p>
+
+<p>A. A. handled the logistical issues rather well; he handled project proposal materials and charts, as well as organizing various team meetings. He checked the project’s requirements several times and gave reminders. He wrote the documentation, and handled the final submission at the end of the project. A. A. additionally divined the table structures during the beginning of the project, with input from the rest of the team at our meetups. After the database was finalized with P. L.’s structure, A. A. valiantly fought Postgres to test and fix the database calls initially provided by L. T.</p>
+<h2 id="overall-assessment">Overall Assessment</h2>
+<p>The project was largely a success, in that we accomplished almost everything we set out to do. However, the road to success was very rocky. From the outset, P. L. and L. T. largely disappeared into their own work. I ended up just writing my portion into a folder which was abducted by them into the aether of their web and server components. Additionally, I was at first indignant with A. A.’s contribution. He dedicated most of his working hours to another project that had no upper bound. I gave him a few tasks but increasingly found it easier and faster to rely on myself as I got more acquainted with the codebase. If we could do it all over again, I should have been more insistent on the database developer as its own proper role.</p>
+
+
+
+
+  </div><a class="u-url" href="/2017/04/Faceline.stream.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">HvanB</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">HvanB</li><li><a class="u-email" href="mailto:hvanb@protonmail.com">hvanb@protonmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/DoughKnight"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">DoughKnight</span></a></li><li><a href="https://www.linkedin.com/in/T.B.A."><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">T.B.A.</span></a></li><li><a href="https://youtube.com/T.B.A."><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">T.B.A.</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software Development in the Silicon Slopes</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

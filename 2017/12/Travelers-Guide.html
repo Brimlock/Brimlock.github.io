@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Traveler’s Guide | HvanB</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Traveler’s Guide" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="This project makes use of world country information from the CIA World Factbook. This was developed for our CS157a Databases class. Extensive parsing in Python was used to obtain the data initially, then SQL was used thereafter." />
+<meta property="og:description" content="This project makes use of world country information from the CIA World Factbook. This was developed for our CS157a Databases class. Extensive parsing in Python was used to obtain the data initially, then SQL was used thereafter." />
+<link rel="canonical" href="http://localhost:4000/2017/12/Travelers-Guide.html" />
+<meta property="og:url" content="http://localhost:4000/2017/12/Travelers-Guide.html" />
+<meta property="og:site_name" content="HvanB" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-12-10T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"This project makes use of world country information from the CIA World Factbook. This was developed for our CS157a Databases class. Extensive parsing in Python was used to obtain the data initially, then SQL was used thereafter.","@type":"BlogPosting","url":"http://localhost:4000/2017/12/Travelers-Guide.html","headline":"Traveler’s Guide","dateModified":"2017-12-10T00:00:00-07:00","datePublished":"2017-12-10T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/12/Travelers-Guide.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="HvanB" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">HvanB</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        <!--
+            my_page.autogen is populated by the pagination logic for all pages
+                            that are automatically created by the gem. Check for non-existence to exclude pagination pages from site.pages iterators
+          -->
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/artwork/index.html">Artwork</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/index.html">Blog</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/projects/index.html">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Traveler&#39;s Guide</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-12-10T00:00:00-07:00" itemprop="datePublished">Dec 10, 2017
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1>Traveler's Guide</h1>
+
+<em>2017 Dec 10</em><br/>
+
+<br/>
+
+
+<p>This project makes use of world country information from the CIA World Factbook. This was developed for our CS157a Databases class. Extensive parsing in Python was used to obtain the data initially, then SQL was used thereafter.</p>
+
+<p>Team Min(Sleep) - <em>By D. H., I. Y., and M. B.</em></p>
+
+<h2 id="fields">Fields</h2>
+
+<ul>
+  <li>2003 (not included) GDP Growth Rate</li>
+  <li>2004 (not included) GDP Per Capita</li>
+  <li>2011 Geographic Coordinates</li>
+  <li>2012 (not included) GDP Composition (sectors)</li>
+  <li>2020 (not included) Elevation</li>
+  <li>2021 (not included) Natural Hazards</li>
+  <li>2028 Background</li>
+  <li>2046 (not included) Poverty Line (% below)</li>
+  <li>2048 (not included) Labor Force Composition</li>
+  <li>2075 (not included) Ethnic Groups</li>
+  <li>2076 (not included) Exchange Rates</li>
+  <li>2090 industries</li>
+  <li>2096 Land Boundaries (borders)</li>
+  <li>2098 Languages</li>
+  <li>2119 (not included) Population</li>
+  <li>2137 (not included) Employment Rate</li>
+  <li>2147 Area</li>
+  <li>2153 (not included) Internet Users</li>
+</ul>
+
+<h2 id="unused-tables">Unused Tables</h2>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Economy</span> <span class="p">(</span><span class="n">country</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="k">REFERENCES</span> <span class="n">Country</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">growthRate</span> <span class="nb">FLOAT</span><span class="p">,</span>
+<span class="n">perCapita</span> <span class="nb">INT</span><span class="p">,</span> <span class="n">agricultural</span> <span class="nb">FLOAT</span><span class="p">,</span>
+<span class="n">industry</span> <span class="nb">FLOAT</span><span class="p">,</span> <span class="n">services</span> <span class="nb">FLOAT</span><span class="p">,</span>
+<span class="n">povertyLine</span> <span class="nb">FLOAT</span><span class="p">,</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="n">country</span><span class="p">));</span></code></pre></figure>
+
+<h2 id="report">Report</h2>
+
+<h3 id="database-schema">Database Schema</h3>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Country</span> <span class="p">(</span><span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span><span class="n">background</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">4000</span><span class="p">),</span><span class="n">latitude</span> <span class="nb">INT</span><span class="p">,</span><span class="n">longitude</span> <span class="nb">INT</span><span class="p">,</span><span class="n">area</span> <span class="nb">INT</span><span class="p">,</span><span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<span class="p">;</span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Users</span> <span class="p">(</span><span class="n">userID</span> <span class="nb">INT</span><span class="p">,</span><span class="n">firstname</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="n">lastname</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="n">psw</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="n">age</span> <span class="nb">INT</span><span class="p">,</span><span class="n">email</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="k">language</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">Languages</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="n">avatar</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="n">country</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">Country</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="n">userID</span><span class="p">));</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">Connection</span> <span class="p">(</span><span class="n">userID1</span> <span class="nb">INT</span> <span class="k">REFERENCES</span> <span class="n">Users</span><span class="p">(</span><span class="n">userID</span><span class="p">),</span><span class="n">userID2</span> <span class="nb">INT</span> <span class="k">REFERENCES</span> <span class="n">Users</span><span class="p">(</span><span class="n">userID</span><span class="p">),</span><span class="n">meetDate</span> <span class="nb">DATE</span><span class="p">,</span><span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="n">userID1</span><span class="p">,</span> <span class="n">userID2</span><span class="p">));</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Recommendation</span> <span class="p">(</span><span class="n">userID</span> <span class="nb">INT</span> <span class="k">REFERENCES</span> <span class="n">Users</span><span class="p">(</span><span class="n">userID</span><span class="p">),</span><span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">Country</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="n">stars</span> <span class="nb">INT</span><span class="p">,</span>
+<span class="n">opinion</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span><span class="n">updatedAt</span> <span class="nb">DATE</span><span class="p">,</span><span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="n">userID</span><span class="p">,</span> <span class="n">name</span><span class="p">));</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Boundaries</span> <span class="p">(</span><span class="n">name1</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">Country</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="n">name2</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">Country</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="k">length</span> <span class="nb">INT</span><span class="p">,</span><span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">));</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Languages</span> <span class="p">(</span><span class="n">id</span> <span class="nb">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span><span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="n">country</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">Country</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="n">percent</span> <span class="nb">FLOAT</span><span class="p">);</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">Industries</span> <span class="p">(</span><span class="n">id</span> <span class="nb">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span><span class="n">country</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">Country</span><span class="p">(</span><span class="n">name</span><span class="p">),</span><span class="n">industry</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">70</span><span class="p">),</span><span class="n">notes</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">));</span></code></pre></figure>
+
+<h3 id="screenshots-of-relations">Screenshots of Relations</h3>
+
+<p><img src="/assets/Travelers_Guide/1.jpg" alt="Countries" /></p>
+
+<p><em>Countries (too many rows to show all, the background field is omitted because this makes the table too unwieldy to show)</em></p>
+
+<p><img src="/assets/Travelers_Guide/2.jpg" alt="Users" /></p>
+
+<p><em>Users (too many rows to show all)</em></p>
+
+<p><img src="/assets/Travelers_Guide/3.jpg" alt="Connection" /></p>
+
+<p><em>Connection (all users have connection with admin, -1. Too many to show all)</em></p>
+
+<p><img src="/assets/Travelers_Guide/4.jpg" alt="Recommendation" /></p>
+
+<p><em>Recommendation</em></p>
+
+<p><img src="/assets/Travelers_Guide/5.jpg" alt="Boundaries" /></p>
+
+<p><em>Boundaries (too many to show all)</em></p>
+
+<p><img src="/assets/Travelers_Guide/6.jpg" alt="Languages" /></p>
+
+<p><em>Languages (too many to show all)</em></p>
+
+<p><img src="/assets/Travelers_Guide/7.jpg" alt="Industries" /></p>
+
+<p><em>Industries (too many to show all)</em></p>
+
+<h2 id="fifteen-distinct-functions">Fifteen Distinct Functions</h2>
+<p>1.View all users
+2.View users in [a given] country
+3.View users of the same language
+4.Adding a connection
+5.Deleting a connection
+6.View own connections
+7.Adding a recommendation
+8.View all recommendations
+9.Reset password
+10.View all countries
+11.Search for Country(s)
+12.List world’s most and least spread languages
+13.View bordering countries
+14.View close countries
+15.View distance from country to self
+16.View distance from country to country
+17.View distance from user to self</p>
+
+<h3 id="sql-select-statements">SQL Select Statements</h3>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">firstname</span><span class="p">,</span> <span class="n">lastname</span> <span class="k">FROM</span> <span class="n">Users</span> <span class="k">Order</span> <span class="k">by</span> <span class="n">firstname</span> <span class="k">ASC</span><span class="p">;</span>
+
+<span class="k">SELECT</span> <span class="n">firstname</span><span class="p">,</span><span class="n">lastname</span> <span class="k">from</span> <span class="n">Users</span> <span class="k">where</span> <span class="n">country</span> <span class="o">=</span> <span class="o">?</span><span class="p">;</span>
+
+<span class="k">SELECT</span> <span class="n">firstname</span><span class="p">,</span><span class="n">lastname</span> <span class="k">from</span> <span class="n">Users</span> <span class="k">as</span> <span class="n">subUsers</span> <span class="k">WHERE</span> <span class="k">EXISTS</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">firstname</span><span class="p">,</span><span class="n">lastname</span> <span class="k">from</span> <span class="n">Users</span> <span class="k">where</span> <span class="n">subUsers</span><span class="p">.</span><span class="k">language</span> <span class="o">=</span> <span class="o">?</span><span class="p">)</span> <span class="k">order</span> <span class="k">by</span> <span class="n">firstname</span><span class="nv">";
+
+SELECT firstname,lastname,meetDate from Connection,Users WHERE ? = userID1 andUsers.userID = userID2 order by meetDate DESC;
+
+SELECT user.firstname, user.lastname, con.meetDate from Connection as con, Users as userWhere con.userID1 = ? and con.userID2 = user.userID;
+
+SELECT firstname,lastname,name,stars,opinion FROM Recommendation, Users whereRecommendation.userID = Users.userID;
+
+SELECT name from Country;
+
+SELECT * FROM Country WHERE Country.name = ?;
+
+SELECT Dest.name, TRUNCATE((SQRT(POWER((Dest.longitude - userCountry.longitude), 2)+ POWER((Dest.latitude - userCountry.latitude), 2))),4) as dist FROM Country as Dest(SELECT longitude, latitude, name FROM Country where ?' = Country.name) as userCountryWhere userCountry.name &lt;&gt; Dest.name having dist &lt; 10 order by dist;
+SELECT name2 FROM Boundaries WHERE Boundaries.name1 = ?;
+
+SELECT TRUNCATE((SQRT(POWER((dest.longitude - origin.longitude), 2) +POWER((dest.latitude - origin.latitude), 2))),4) as dist FROM Country as origin, Country as destWHERE origin.name &lt;&gt; dest.name AND origin.name = ? AND dest.name = ? SELECT TRUNCATE((SQRT(POWER((dest.longitude - origin.longitude), 2) +POWER((dest.latitude - origin.latitude), 2))),4) as dist FROM Country as origin, Country as destWHERE origin.name &lt;&gt; dest.name AND origin.name = ? AND dest.name = ?
+
+SELECT destUserCountry.name, TRUNCATE((SQRT(POWER((destUserCountry.longitude -userCountry.longitude), 2) + POWER((destUserCountry.latitude - userCountry.latitude), 2))),4)as dist FROM (SELECT longitude, latitude,name FROM Country, Users WHEREUsers.firstname = ? AND Users.lastname = ? AND Users.country = Country.name) asdestUserCountry, (SELECT longitude, latitude FROM Country WHERE ? = Country.name) as userCountry;
+
+SELECT userID, firstname, lastname, age,language,country, email, psw from Users Order byuserID ASC;
+
+SELECT firstname, lastname, meetDate from Connection left join TravelersGuide.Users onUsers.userID = userID1 or Users.userID = userID2 order by meetDate DESC;
+
+SELECT * from Recommendation;
+
+_(The following SQL select statement finds some of the languages used in the greatest and leastsquare kilometers on Earth. This put our database to the test)._
+
+SELECT DISTINCT j1.lname as mname, j1.carea AS marea
+FROM
+(SELECT l.name AS lname, sum(c.area) AS carea
+FROM Languages AS l, Country AS c
+WHERE l.country = c.name
+GROUP BY l.name) AS j1
+JOIN
+(SELECT l.name AS lname, sum(c.area) AS carea
+FROM Languages AS l, Country AS c
+WHERE l.country = c.name
+GROUP BY l.name) AS j2 WHERE j1.lname &lt; j2.lname
+AND j1.lname NOT IN (SELECT DISTINCT j3.lname
+FROM
+(SELECT l.name AS lname, sum(c.area) AS carea
+FROM Languages AS l, Country AS c
+WHERE l.country = c.name
+GROUP BY l.name) AS j3
+JOIN
+(SELECT l.name AS lname, sum(c.area) AS carea
+FROM Languages AS l, Country AS c
+WHERE l.country = c.name
+GROUP BY l.name) AS j4
+WHERE j3.lname &lt; j4.lname and j3.carea &lt; j4.carea)
+UNION
+SELECT DISTINCT j1.lname as mname, j1.carea AS marea
+FROM
+(SELECT l.name AS lname, sum(c.area) AS carea
+FROM Languages AS l, Country AS c
+WHERE l.country = c.name
+GROUP BY l.name) AS j1
+JOIN
+(SELECT l.name AS lname, sum(c.area) AS carea
+FROM Languages AS l, Country AS c
+WHERE l.country = c.name
+GROUP BY l.name) AS j2
+WHERE j1.lname &lt; j2.lname
+AND j1.lname NOT IN (SELECT DISTINCT j3.lname
+FROM
+(SELECT l.name AS lname, sum(c.area) AS carea
+FROM Languages AS l, Country AS c
+WHERE l.country = c.name
+GROUP BY l.name) AS j3
+JOIN
+(SELECT l.name AS lname, sum(c.area) AS carea
+FROM Languages AS l, Country AS c
+WHERE l.country = c.name
+GROUP BY l.name) AS j4
+WHERE j3.lname &lt; j4.lname and j3.carea &gt; j4.carea);</span></code></pre></figure>
+
+<h3 id="sql-update-statements">SQL Update Statements</h3>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">UPDATE</span> <span class="n">Users</span> <span class="k">SET</span> <span class="n">psw</span> <span class="o">=</span> <span class="o">?</span> <span class="k">WHERE</span> <span class="n">userID</span> <span class="o">=</span> <span class="o">?</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="n">Users</span> <span class="k">SET</span> <span class="n">psw</span> <span class="o">=</span> <span class="o">?</span> <span class="k">WHERE</span> <span class="n">userID</span> <span class="o">=</span> <span class="o">?</span><span class="p">;</span></code></pre></figure>
+
+<h3 id="sql-delete-statements">SQL Delete Statements</h3>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">Connection</span> <span class="k">where</span> <span class="o">?</span> <span class="o">=</span> <span class="n">userID1</span> <span class="k">and</span> <span class="o">?</span> <span class="o">=</span> <span class="n">userID2</span><span class="p">;</span>
+
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Users</span> <span class="k">where</span> <span class="n">userID</span> <span class="o">=</span> <span class="o">?</span><span class="p">;</span></code></pre></figure>
+
+<h3 id="sql-insert-statements">SQL Insert Statements</h3>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">Connection</span><span class="p">(</span><span class="n">userID1</span><span class="p">,</span><span class="n">userID2</span><span class="p">,</span><span class="n">meetDate</span><span class="p">)</span><span class="k">VALUES</span> <span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">)</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Recommendation</span><span class="p">(</span><span class="n">userID</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span><span class="n">stars</span><span class="p">,</span><span class="n">opinion</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">)</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Users</span><span class="p">(</span><span class="n">userID</span><span class="p">,</span><span class="n">firstname</span><span class="p">,</span><span class="n">lastname</span><span class="p">,</span><span class="n">psw</span><span class="p">,</span><span class="n">age</span><span class="p">,</span><span class="n">email</span><span class="p">,</span><span class="k">language</span><span class="p">,</span><span class="n">country</span><span class="p">)</span><span class="k">VALUES</span><span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">,</span><span class="o">?</span><span class="p">)</span></code></pre></figure>
+
+<h3 id="all-sql-triggers">All SQL Triggers</h3>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="o">//</span>
+<span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">firstConnection</span>
+<span class="k">AFTER</span> <span class="k">INSERT</span> <span class="k">ON</span> <span class="n">Users</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="k">ROW</span>
+<span class="k">BEGIN</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">Connection</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="k">NEW</span><span class="p">.</span><span class="n">userID</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">CURRENT_DATE</span><span class="p">);</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">Connection</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">NEW</span><span class="p">.</span><span class="n">userID</span><span class="p">,</span> <span class="k">CURRENT_DATE</span><span class="p">);</span>
+<span class="k">END</span><span class="o">//</span>
+<span class="k">DELIMITER</span> <span class="p">;</span>
+
+<span class="k">DELIMITER</span> <span class="o">//</span>
+<span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">distinctAvatar</span>
+<span class="k">BEFORE</span> <span class="k">UPDATE</span> <span class="k">ON</span> <span class="n">Users</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="k">ROW</span>
+<span class="k">BEGIN</span>
+<span class="n">IF</span> <span class="k">NEW</span><span class="p">.</span><span class="n">avatar</span>
+<span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">avatar</span> <span class="k">FROM</span> <span class="n">Users</span><span class="p">)</span> <span class="k">THEN</span>
+<span class="k">SET</span> <span class="k">NEW</span><span class="p">.</span><span class="n">avatar</span> <span class="o">=</span> <span class="k">OLD</span><span class="p">.</span><span class="n">avatar</span><span class="p">;</span>
+<span class="k">END</span> <span class="n">IF</span><span class="p">;</span>
+<span class="k">END</span><span class="o">//</span>
+<span class="k">DELIMITER</span><span class="p">;</span>
+
+<span class="k">DELIMITER</span> <span class="o">//</span>
+<span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">RecInsert</span>
+<span class="k">BEFORE</span> <span class="k">INSERT</span> <span class="k">ON</span> <span class="n">Recommendation</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="k">ROW</span>
+<span class="k">BEGIN</span>
+<span class="k">SET</span> <span class="k">NEW</span><span class="p">.</span><span class="n">updatedAt</span> <span class="o">=</span> <span class="k">CURRENT_DATE</span><span class="p">;</span>
+<span class="k">END</span><span class="o">//</span>
+<span class="k">DELIMITER</span><span class="p">;</span>
+
+<span class="k">DELIMITER</span> <span class="o">//</span>
+<span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">RecUpdate</span>
+<span class="k">BEFORE</span> <span class="k">UPDATE</span> <span class="k">ON</span> <span class="n">Recommendation</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="k">ROW</span>
+<span class="k">BEGIN</span>
+<span class="k">SET</span> <span class="k">NEW</span><span class="p">.</span><span class="n">updatedAt</span> <span class="o">=</span> <span class="k">CURRENT_DATE</span><span class="p">;</span>
+<span class="k">END</span><span class="o">//</span>
+<span class="k">DELIMITER</span><span class="p">;</span></code></pre></figure>
+
+<h3 id="all-sql-stored-procedures">ALL SQL Stored Procedures</h3>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">DELIMITER</span> <span class="o">//</span>
+<span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">reflectConnection</span><span class="p">()</span>
+<span class="k">BEGIN</span>
+<span class="k">INSERT</span> <span class="k">IGNORE</span> <span class="k">INTO</span> <span class="k">Connection</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="n">c1</span><span class="p">.</span><span class="n">userID2</span><span class="p">,</span> <span class="n">c1</span><span class="p">.</span><span class="n">userID1</span><span class="p">,</span> <span class="n">c1</span><span class="p">.</span><span class="n">meetDate</span>
+<span class="k">FROM</span> <span class="k">Connection</span> <span class="n">c1</span>
+<span class="k">WHERE</span> <span class="k">NOT</span> <span class="k">EXISTS</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="k">Connection</span> <span class="k">AS</span> <span class="n">c2</span>
+<span class="k">WHERE</span> <span class="n">c2</span><span class="p">.</span><span class="n">userID1</span> <span class="o">=</span> <span class="n">c1</span><span class="p">.</span><span class="n">userID2</span> <span class="k">AND</span> <span class="n">c2</span><span class="p">.</span><span class="n">userID2</span> <span class="o">=</span> <span class="n">c1</span><span class="p">.</span><span class="n">userID1</span><span class="p">));</span>
+<span class="k">END</span><span class="o">//</span>
+<span class="k">DELIMITER</span><span class="p">;</span>
+
+<span class="k">DELIMITER</span> <span class="o">//</span>
+<span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">reflectBoundaries</span><span class="p">()</span>
+<span class="k">BEGIN</span>
+<span class="k">INSERT</span> <span class="k">IGNORE</span> <span class="k">INTO</span> <span class="n">Boundaries</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="n">b1</span><span class="p">.</span><span class="n">name2</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="n">name1</span><span class="p">,</span> <span class="n">b1</span><span class="p">.</span><span class="k">length</span>
+<span class="k">FROM</span> <span class="n">Boundaries</span> <span class="n">b1</span>
+<span class="k">WHERE</span> <span class="k">NOT</span> <span class="k">EXISTS</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">Boundaries</span> <span class="k">AS</span> <span class="n">b2</span>
+<span class="k">WHERE</span> <span class="n">b2</span><span class="p">.</span><span class="n">name1</span> <span class="o">=</span> <span class="n">b1</span><span class="p">.</span><span class="n">name2</span> <span class="k">AND</span> <span class="n">b2</span><span class="p">.</span><span class="n">name2</span> <span class="o">=</span> <span class="n">b1</span><span class="p">.</span><span class="n">name1</span><span class="p">));</span>
+<span class="k">END</span><span class="o">//</span>
+<span class="k">DELIMITER</span><span class="p">;</span>
+
+<span class="k">DELIMITER</span> <span class="o">//</span>
+<span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">ARCHIVE</span><span class="p">(</span><span class="n">cutoff</span> <span class="nb">DATE</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">RecArchive</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Recommendation</span> <span class="k">as</span> <span class="n">r</span>
+<span class="k">WHERE</span> <span class="n">r</span><span class="p">.</span><span class="n">updatedAt</span> <span class="o">&lt;</span> <span class="n">cutoff</span>
+<span class="k">ON</span> <span class="n">DUPLICATE</span> <span class="k">KEY</span> <span class="k">UPDATE</span> <span class="n">userID</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">userID</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">stars</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">stars</span><span class="p">,</span><span class="n">opinion</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">opinion</span><span class="p">,</span> <span class="n">updatedAt</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">updatedAt</span><span class="p">;</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">Recommendation</span>
+<span class="k">WHERE</span> <span class="n">updatedAt</span> <span class="o">&lt;</span> <span class="n">cutoff</span><span class="p">;</span>
+<span class="k">END</span><span class="o">//</span>
+<span class="k">DELIMITER</span><span class="p">;</span></code></pre></figure>
+
+<h3 id="functions">Functions</h3>
+
+<p><img src="/assets/Travelers_Guide/8.jpg" alt="8" /></p>
+
+<p><em>View all users</em></p>
+
+<p><img src="/assets/Travelers_Guide/9.jpg" alt="9" /></p>
+
+<p><em>View users in [a given] country</em></p>
+
+<p><img src="/assets/Travelers_Guide/10.jpg" alt="10" /></p>
+
+<p><em>View users with the same language</em></p>
+
+<p><img src="/assets/Travelers_Guide/11.jpg" alt="11" /></p>
+
+<p><em>Deleting a connection</em></p>
+
+<p><img src="/assets/Travelers_Guide/12.jpg" alt="12" /></p>
+
+<p><em>View own connections</em></p>
+
+<p><img src="/assets/Travelers_Guide/13.jpg" alt="13" /></p>
+
+<p><em>Adding a recommendation</em></p>
+
+<p><img src="/assets/Travelers_Guide/14.jpg" alt="14" /></p>
+
+<p><em>View all recommendations</em></p>
+
+<p><img src="/assets/Travelers_Guide/15.jpg" alt="15" /></p>
+
+<p><em>View all countries</em></p>
+
+<p><img src="/assets/Travelers_Guide/16.jpg" alt="16" /></p>
+
+<p><em>Search for country(ies)</em></p>
+
+<p><img src="/assets/Travelers_Guide/17.jpg" alt="17" /></p>
+
+<p><em>View some of the world’s languages spoken in the most and least square kilometers</em></p>
+
+<p><img src="/assets/Travelers_Guide/18.jpg" alt="18" /></p>
+
+<p><em>View bordering countries</em></p>
+
+<p><img src="/assets/Travelers_Guide/19.jpg" alt="19" /></p>
+
+<p><em>View distance to close connections</em></p>
+
+<p><img src="/assets/Travelers_Guide/20.jpg" alt="20" /></p>
+
+<p><em>View distance from country to self</em></p>
+
+<p><img src="/assets/Travelers_Guide/21.jpg" alt="21" /></p>
+
+<p><em>View distance between two countries</em></p>
+
+<p><img src="/assets/Travelers_Guide/22.jpg" alt="22" /></p>
+
+<p><em>View distance from user</em></p>
+
+<p><img src="/assets/Travelers_Guide/23.jpg" alt="23" /></p>
+
+<p><em>Adding a connection</em></p>
+
+<p><img src="/assets/Travelers_Guide/24.jpg" alt="24" /></p>
+
+<p><em>Reset password</em></p>
+
+<h3 id="archiving">Archiving</h3>
+
+<p><img src="/assets/Travelers_Guide/25.jpg" alt="25" /></p>
+
+<p><em>View all recommendations</em></p>
+
+<p><img src="/assets/Travelers_Guide/26.jpg" alt="16" /></p>
+
+<p><em>(checking the archive in mysql)</em></p>
+
+<h3 id="key-constraint-and-foreign-key-constrain-violations">Key Constraint and Foreign Key Constrain Violations</h3>
+
+<p><img src="/assets/Travelers_Guide/27.jpg" alt="26" /></p>
+
+<p>Trying to insert, but the key for this tuple already exists within the relation</p>
+
+<h2 id="source">Source</h2>
+<p><a href="https://github.com/DoughKnight/TravelersGuide">GitHub</a></p>
+
+
+
+
+  </div><a class="u-url" href="/2017/12/Travelers-Guide.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">HvanB</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">HvanB</li><li><a class="u-email" href="mailto:hvanb@protonmail.com">hvanb@protonmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/DoughKnight"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">DoughKnight</span></a></li><li><a href="https://www.linkedin.com/in/T.B.A."><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">T.B.A.</span></a></li><li><a href="https://youtube.com/T.B.A."><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg> <span class="username">T.B.A.</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software Development in the Silicon Slopes</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
