@@ -5,4 +5,3 @@ To Do
 -----
 * Integrate Let's Encrypt
 * Add betsuin project
-* Make categories page have expandable lists
